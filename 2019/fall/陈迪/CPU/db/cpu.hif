@@ -1,0 +1,706 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+32
+1614
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+cpu
+# case_insensitive
+# source_file
+cpu.bdf
+1257215375
+23
+# storage
+db|cpu.(0).cnf
+db|cpu.(0).cnf
+# hierarchies {
+|
+}
+# end
+# entity
+timer
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+timer.vhd
+1256604773
+4
+# storage
+db|cpu.(2).cnf
+db|cpu.(2).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+timer:inst4
+}
+# end
+# entity
+exe_unit
+# case_insensitive
+# source_file
+exe_unit.bdf
+1257215754
+23
+# storage
+db|cpu.(4).cnf
+db|cpu.(4).cnf
+# hierarchies {
+exe_unit:inst1
+}
+# end
+# entity
+alu
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+alu.vhd
+1257813707
+4
+# storage
+db|cpu.(6).cnf
+db|cpu.(6).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+exe_unit:inst1|alu:inst
+}
+# end
+# entity
+lpm_add_sub
+# case_insensitive
+# source_file
+..|..|altera|quartus50|libraries|megafunctions|lpm_add_sub.tdf
+1114012446
+6
+# storage
+db|cpu.(7).cnf
+db|cpu.(7).cnf
+# user_parameter {
+LPM_WIDTH
+16
+PARAMETER_DEC
+USR
+LPM_REPRESENTATION
+SIGNED
+PARAMETER_UNKNOWN
+DEF
+LPM_DIRECTION
+ADD
+PARAMETER_UNKNOWN
+USR
+ONE_INPUT_IS_CONSTANT
+NO
+PARAMETER_UNKNOWN
+USR
+LPM_PIPELINE
+0
+PARAMETER_UNKNOWN
+DEF
+MAXIMIZE_SPEED
+5
+PARAMETER_UNKNOWN
+DEF
+REGISTERED_AT_END
+0
+PARAMETER_UNKNOWN
+DEF
+OPTIMIZE_FOR_SPEED
+5
+PARAMETER_UNKNOWN
+USR
+USE_CS_BUFFERS
+1
+PARAMETER_UNKNOWN
+DEF
+CARRY_CHAIN
+MANUAL
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN_LENGTH
+48
+CARRY_CHAIN_LENGTH
+USR
+DEVICE_FAMILY
+Cyclone
+PARAMETER_UNKNOWN
+USR
+USE_WYS
+OFF
+PARAMETER_UNKNOWN
+DEF
+STYLE
+FAST
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+add_sub_p7g
+PARAMETER_UNKNOWN
+USR
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+}
+# used_port {
+cin
+cout
+dataa0
+dataa10
+dataa11
+dataa12
+dataa13
+dataa14
+dataa15
+dataa1
+dataa2
+dataa3
+dataa4
+dataa5
+dataa6
+dataa7
+dataa8
+dataa9
+datab0
+datab10
+datab11
+datab12
+datab13
+datab14
+datab15
+datab1
+datab2
+datab3
+datab4
+datab5
+datab6
+datab7
+datab8
+datab9
+overflow
+result0
+result10
+result11
+result12
+result13
+result14
+result15
+result1
+result2
+result3
+result4
+result5
+result6
+result7
+result8
+result9
+}
+# include_file {
+..|..|altera|quartus50|libraries|megafunctions|addcore.inc
+1107572218
+..|..|altera|quartus50|libraries|megafunctions|look_add.inc
+1107574364
+..|..|altera|quartus50|libraries|megafunctions|bypassff.inc
+1107573920
+..|..|altera|quartus50|libraries|megafunctions|altshift.inc
+1107573438
+..|..|altera|quartus50|libraries|megafunctions|alt_stratix_add_sub.inc
+1107572606
+..|..|altera|quartus50|libraries|megafunctions|alt_mercury_add_sub.inc
+1107572592
+..|..|altera|quartus50|libraries|megafunctions|aglobal50.inc
+1114012420
+}
+# hierarchies {
+exe_unit:inst1|alu:inst|lpm_add_sub:ALU_ADDSUB
+}
+# end
+# entity
+addcore
+# case_insensitive
+# source_file
+..|..|altera|quartus50|libraries|megafunctions|addcore.tdf
+1114012446
+6
+# storage
+db|cpu.(8).cnf
+db|cpu.(8).cnf
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+width
+16
+PARAMETER_UNKNOWN
+USR
+REPRESENTATION
+SIGNED
+PARAMETER_UNKNOWN
+USR
+DIRECTION
+ADD
+PARAMETER_UNKNOWN
+USR
+USE_CS_BUFFERS
+1
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN
+MANUAL
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN_LENGTH
+48
+CARRY_CHAIN_LENGTH
+USR
+DEVICE_FAMILY
+Cyclone
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+dataa0
+dataa1
+dataa2
+dataa3
+dataa4
+dataa5
+dataa6
+dataa7
+dataa8
+dataa9
+dataa10
+dataa11
+dataa12
+dataa13
+dataa14
+dataa15
+datab0
+datab1
+datab2
+datab3
+datab4
+datab5
+datab6
+datab7
+datab8
+datab9
+datab10
+datab11
+datab12
+datab13
+datab14
+datab15
+cin
+result0
+result1
+result2
+result3
+result4
+result5
+result6
+result7
+result8
+result9
+result10
+result11
+result12
+result13
+result14
+result15
+cout
+overflow
+}
+# include_file {
+..|..|altera|quartus50|libraries|megafunctions|addcore.inc
+1107572218
+..|..|altera|quartus50|libraries|megafunctions|aglobal50.inc
+1114012420
+..|..|altera|quartus50|libraries|megafunctions|a_csnbuffer.inc
+1107571892
+}
+# hierarchies {
+exe_unit:inst1|alu:inst|lpm_add_sub:ALU_ADDSUB|addcore:adder
+}
+# end
+# entity
+a_csnbuffer
+# case_insensitive
+# source_file
+..|..|altera|quartus50|libraries|megafunctions|a_csnbuffer.tdf
+1114012448
+6
+# storage
+db|cpu.(9).cnf
+db|cpu.(9).cnf
+# user_parameter {
+WIDTH
+16
+PARAMETER_UNKNOWN
+USR
+NEED_CARRY
+0
+PARAMETER_UNKNOWN
+DEF
+USE_CS_BUFFERS
+1
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+sin0
+sout0
+}
+# hierarchies {
+exe_unit:inst1|alu:inst|lpm_add_sub:ALU_ADDSUB|addcore:adder|a_csnbuffer:oflow_node
+exe_unit:inst1|alu:inst|lpm_add_sub:ALU_ADDSUB|addcore:adder|a_csnbuffer:cout_node
+}
+# end
+# entity
+a_csnbuffer
+# case_insensitive
+# source_file
+..|..|altera|quartus50|libraries|megafunctions|a_csnbuffer.tdf
+1114012448
+6
+# storage
+db|cpu.(10).cnf
+db|cpu.(10).cnf
+# user_parameter {
+WIDTH
+16
+PARAMETER_UNKNOWN
+USR
+NEED_CARRY
+1
+PARAMETER_UNKNOWN
+USR
+USE_CS_BUFFERS
+1
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+sin0
+sin1
+sin2
+sin3
+sin4
+sin5
+sin6
+sin7
+sin8
+sin9
+sin10
+sin11
+sin12
+sin13
+sin14
+sin15
+cin0
+cin1
+cin2
+cin3
+cin4
+cin5
+cin6
+cin7
+cin8
+cin9
+cin10
+cin11
+cin12
+cin13
+cin14
+cin15
+sout0
+sout1
+sout2
+sout3
+sout4
+sout5
+sout6
+sout7
+sout8
+sout9
+sout10
+sout11
+sout12
+sout13
+sout14
+sout15
+cout0
+cout1
+cout2
+cout3
+cout4
+cout5
+cout6
+cout7
+cout8
+cout9
+cout10
+cout11
+cout12
+cout13
+cout14
+cout15
+}
+# hierarchies {
+exe_unit:inst1|alu:inst|lpm_add_sub:ALU_ADDSUB|addcore:adder|a_csnbuffer:result_node
+}
+# end
+# entity
+altshift
+# case_insensitive
+# source_file
+..|..|altera|quartus50|libraries|megafunctions|altshift.tdf
+1114012454
+6
+# storage
+db|cpu.(11).cnf
+db|cpu.(11).cnf
+# user_parameter {
+WIDTH
+16
+PARAMETER_UNKNOWN
+USR
+DEPTH
+0
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+data0
+data1
+data2
+data3
+data4
+data5
+data6
+data7
+data8
+data9
+data10
+data11
+data12
+data13
+data14
+data15
+result0
+result1
+result2
+result3
+result4
+result5
+result6
+result7
+result8
+result9
+result10
+result11
+result12
+result13
+result14
+result15
+}
+# hierarchies {
+exe_unit:inst1|alu:inst|lpm_add_sub:ALU_ADDSUB|altshift:result_ext_latency_ffs
+}
+# end
+# entity
+altshift
+# case_insensitive
+# source_file
+..|..|altera|quartus50|libraries|megafunctions|altshift.tdf
+1114012454
+6
+# storage
+db|cpu.(12).cnf
+db|cpu.(12).cnf
+# user_parameter {
+WIDTH
+1
+PARAMETER_UNKNOWN
+USR
+DEPTH
+0
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+data0
+result0
+}
+# hierarchies {
+exe_unit:inst1|alu:inst|lpm_add_sub:ALU_ADDSUB|altshift:carry_ext_latency_ffs
+exe_unit:inst1|alu:inst|lpm_add_sub:ALU_ADDSUB|altshift:oflow_ext_latency_ffs
+}
+# end
+# entity
+mem_unit
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+mem_unit.vhd
+1258420189
+4
+# storage
+db|cpu.(1).cnf
+db|cpu.(1).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+mem_unit:inst3
+}
+# end
+# entity
+id_unit
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+id_unit.vhd
+1259022082
+4
+# storage
+db|cpu.(3).cnf
+db|cpu.(3).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+id_unit:inst2
+}
+# end
+# entity
+flagreg
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+flagreg.vhd
+1259021776
+4
+# storage
+db|cpu.(5).cnf
+db|cpu.(5).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+exe_unit:inst1|flagreg:inst1
+}
+# end
+# entity
+reg
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+reg.vhd
+1259022593
+4
+# storage
+db|cpu.(13).cnf
+db|cpu.(13).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+exe_unit:inst1|reg:inst2
+}
+# end
+# entity
+debug_unit
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+debug_unit.vhd
+1259022755
+4
+# storage
+db|cpu.(14).cnf
+db|cpu.(14).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+debug_unit:inst
+}
+# end
+# complete
+

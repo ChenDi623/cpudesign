@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="cpu">
+		<CBX_INST_ENTRY INSTANCE_NAME="|cpu|exe_unit:inst1|alu:inst|lpm_add_sub:ALU_ADDSUB" CBX_FILE_NAME="add_sub_p7g.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
